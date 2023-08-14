@@ -1,0 +1,70 @@
+.cta-banner {
+    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    padding: 70px 0 70px;
+    position: relative;
+    background-color: #ED6D46;
+    border-radius: 10px;
+
+    button{
+        margin-top: 20px;
+        background-color: #fff;
+        color: $mainOrange;
+        border: 2px solid transparent;
+    }
+
+    button:hover {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+    }
+
+    h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    &--post {
+        padding: 70px 0 160px;
+        position: relative;
+        background-color: #ddd;
+        border-radius: 10px;
+        margin-bottom: 50px;
+
+        @include atMedium {
+            padding: 70px 0 110px;
+        }
+    
+        .formkit-form[data-uid="1d348d83d0"] .formkit-button > span, .formkit-form[data-uid="1d348d83d0"] .formkit-submit > span {
+            border-radius: 5px;
+
+        }
+
+        .formkit-form[data-uid="1d348d83d0"][min-width~="700"] [data-style="clean"], .formkit-form[data-uid="1d348d83d0"][min-width~="800"] [data-style="clean"] {
+            padding: 10px 50px;
+            position: absolute;
+        }
+
+        .formkit-form[data-uid="1d348d83d0"] [data-style="clean"] {
+            padding: 0px 50px;
+            position: absolute;
+        }
+
+        .formkit-form[data-uid="1d348d83d0"][min-width~="700"] .formkit-fields[data-stacked="false"], .formkit-form[data-uid="1d348d83d0"][min-width~="800"] .formkit-fields[data-stacked="false"] {
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .headline--smaller {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+        }
+    }
+
+    
+}

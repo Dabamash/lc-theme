@@ -1,0 +1,186 @@
+.page-section {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  @include atSmall {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    width: 700px;
+  }
+
+  &--white {
+    background-color: #fff;
+  }
+
+  &--beige {
+    background-color: $beige;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-loader {
+  margin-top: 45px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 0.25rem solid rgba(0, 0, 0, 0.2);
+  border-top-color: black;
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+
+.c-orange {
+  color: $mainOrange;
+}
+.c-blue {
+  color: $mainOrange;
+}
+.c-white {
+  color: #fff;
+}
+.c-dark {
+  color: #333;
+}
+.gray {
+  color: #999999;
+}
+
+.search-trigger {
+  display: none;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  top: 1px;
+  margin-left: 20px;
+  @include atMedium {
+    display: inline-block;
+    top: 8px;
+  }
+}
+
+.search-trigger:hover {
+  opacity: 0.65;
+}
+
+.nav-list ul {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  color: $mainOrange;
+  text-decoration: underline;
+}
+
+.one-half,
+.one-third,
+.one-fourth,
+.one-fifth,
+.one-sixth {
+  padding-bottom: 1.6rem;
+}
+
+@include atMedium {
+  .row {
+    margin-right: -50px;
+  }
+
+  .one-half,
+  .one-third,
+  .two-thirds,
+  .one-fourth,
+  .one-fifth,
+  .one-sixth {
+    padding-bottom: 0;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 50px;
+  }
+
+  .two-thirds {
+    width: 66.66%;
+  }
+  .one-half {
+    width: 50%;
+  }
+  .one-third {
+    width: 33.33%;
+  }
+  .one-quarter {
+    width: 25%;
+  }
+  .one-fifth {
+    width: 20%;
+  }
+  .one-sixth {
+    width: 16.66%;
+  }
+}
+
+/* Make Top WP Admin Bar Fixed on Mobile */
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
+/* Seach Form */
+.search-form {
+  background-color: #dedede;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-form label {
+  display: block;
+}
+
+.search-form-row {
+  display: flex;
+}
+
+.search-form .s {
+  min-width: 20px;
+  flex-basis: auto;
+  flex-grow: 1;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  @include atSmall {
+    font-size: 1.4rem;
+  }
+}
+
+.search-submit {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: $mainOrange;
+  font-family: "Roboto", sans-serif;
+  padding: 0 20px;
+  margin-left: 10px;
+}

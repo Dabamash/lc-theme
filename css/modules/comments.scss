@@ -1,0 +1,112 @@
+.commentlist {
+    list-style: none;
+    padding: 0;
+
+    .comment {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-bottom: 1px solid #ebebeb;
+
+        .reply a {
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .children {
+            margin-top: 20px;
+            padding-left: 40px;
+        }
+
+        .comment-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            flex: 1;
+
+            .comment-author {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                img {
+                    max-width: 100%;
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-right: 20px;
+                }
+
+                .fn, .comment-meta {
+                    font-weight: bold;
+                    margin-right: 10px;
+                }
+
+                .says {
+                    display: none;
+                }
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .comment-content {
+                margin-top: 10px;
+            }
+        }
+
+        .comment-content {
+            margin-top: 10px;
+        }
+    }   
+}
+
+.comment-form label {
+    display: none;
+}
+
+.comment-form p.comment-form-cookies-consent label {
+    display: inline;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.comment-form input[type="text"]::placeholder,
+.comment-form input[type="email"]::placeholder,
+.comment-form input[type="url"]::placeholder,
+.comment-form textarea::placeholder {
+    color: #999;
+}
+
+.comment-form input[type="submit"] {
+    background-color: #ed6d46;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form input[type="submit"]:hover {
+    background-color: #d45433;
+}
+

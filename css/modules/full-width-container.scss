@@ -1,0 +1,15 @@
+.full-width-container {
+  &__column {
+    padding: 1.6rem 16px;
+
+    @include atMedium {
+      padding: 40px;
+    }
+
+    @media (min-width: 1350px) {
+      margin: 0 auto;
+      max-width: 1300px;
+    }
+    
+  }
+}

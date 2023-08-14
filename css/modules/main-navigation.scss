@@ -1,0 +1,76 @@
+.main-navigation {
+
+  ul {
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  ul:before,
+  ul:after {
+    content: " ";
+    display: table;
+  }
+
+  ul:after {
+    clear: both;
+  }
+
+  @include atMedium {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.main-navigation li {
+  list-style: none;
+
+  @include atMedium {
+    float: left;
+    padding-left: 20px;
+  }
+}
+
+.main-navigation a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  @include atMedium {
+    display: inline-block;
+    padding: 0;
+  }
+}
+
+/* Static underline for current-menu-item */
+.main-navigation .current-menu-item a {
+  text-decoration: underline #ed6d46;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 7px; /* Adjust as needed */
+}
+
+/* Animated underline on hover */
+.main-navigation a {
+  position: relative; /* Required for absolute positioning of the underline */
+  text-decoration: none; /* Remove the default underline */
+}
+
+.main-navigation a::before {
+  content: ''; /* Create the pseudo-element for the underline */
+  position: absolute;
+  bottom: -4px; /* Adjust this value to control the distance from the text */
+  left: 0; /* Start the underline from the left */
+  width: 0; /* Initial width of the underline */
+  height: 4px; /* Height of the underline */
+  background-color: #ed6d46;
+  transition: width 0.3s ease; /* Add a transition for the width property */
+  transform-origin: left; /* Set the origin for animation */
+  transform: scaleX(0); /* Start with no width */
+}
+
+.main-navigation a:hover::before {
+  width: 100%; /* Expand the width to 100% on hover */
+  transform: scaleX(1); /* Animate the width from 0 to 100% */
+}
+

@@ -1,0 +1,27 @@
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: $mainOrange;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s ease;
+  z-index: 999;
+  border: 2px solid $mainOrange;
+  
+  &:hover {
+  background-color: darken($mainOrange, 10%);
+  color: #fff;
+  }
+
+  &:hover a {
+    color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+    color: $mainOrange;
+  }
+}
