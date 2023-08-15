@@ -136,9 +136,9 @@ function wpse_67503_textarea_insert( $fields )
     return $fields;
 }
 
-function custom_default_avatar($avatar_defaults) {
-  $custom_avatar = get_stylesheet_directory_uri() . '/images/comment-avatar.webp'; // Change to the path of your custom avatar image
-  $avatar_defaults[$custom_avatar] = 'Custom Avatar';
-  return $avatar_defaults;
+add_filter( 'avatar_defaults', 'custom_avatar' );
+	function custom_avatar($avatar_defaults){
+	$custom_avatar = get_stylesheet_directory_uri() . '/images/custom-avatar.png';
+	$avatar_defaults[$custom_avatar] = "My Default Avatar";
+	return $avatar_defaults;
 }
-add_filter('avatar_defaults', 'custom_default_avatar');
