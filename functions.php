@@ -13,15 +13,15 @@ add_action('rest_api_init', 'lc_custom_rest');
 function lc_files() {
   wp_enqueue_script('main-lc-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
-  wp_enqueue_script('font-awesome-kit', 'https://kit.fontawesome.com/5ff7de27f2.js', array(), null, true); // Add this line
+  wp_enqueue_script('font-awesome-kit', 'https://kit.fontawesome.com/5ff7de27f2.js', array(), null, true);
   wp_enqueue_style('lc_main_styles', get_theme_file_uri('/build/style-index.css'));
   wp_enqueue_style('lc_extra_styles', get_theme_file_uri('/build/index.css'));
 
   wp_localize_script('main-lc-js', 'lcData', array(
     'root_url' => get_site_url(),
+    'ajax_url' => admin_url('admin-ajax.php'),
     'nonce' => wp_create_nonce('wp_rest')
   ));
-
 }
 
 add_action('wp_enqueue_scripts', 'lc_files');
@@ -80,7 +80,7 @@ function ourLoginTitle() {
 
 // Custom function to calculate estimated reading time
 function get_estimated_reading_time($content) {
-  $words_per_minute = 200; // Adjust this value as needed for the average reading speed.
+  $words_per_minute = 200;
   $word_count = str_word_count(strip_tags($content));
   $reading_time = ceil($word_count / $words_per_minute);
 
@@ -135,3 +135,63 @@ function wpse_67503_textarea_insert( $fields )
 
     return $fields;
 }
+
+// For logged-in users
+add_action('wp_ajax_my_filter', 'my_filter_function');
+
+// For non logged-in users
+add_action('wp_ajax_nopriv_my_filter', 'my_filter_function');
+
+function my_filter_function() {
+  if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'wp_rest')) {
+      echo 'Permission denied';
+      wp_die();
+  }
+
+  $category_filter = isset($_POST['categoryfilter']) ? $_POST['categoryfilter'] : '';
+
+  $recent_posts_args = array(
+      'post_type' => 'post',
+      'posts_per_page' => 12,
+      'orderby' => 'date',
+      'order' => 'DESC',
+      'post_status' => 'publish'
+  );
+
+  if (!empty($category_filter)) {
+      $recent_posts_args['category__in'] = $category_filter;
+  }
+
+  $recent_posts = new WP_Query($recent_posts_args);
+
+  while ($recent_posts->have_posts()) {
+      $recent_posts->the_post();
+      ?>
+      <div class="recent-post-box">
+          <a href="<?php the_permalink(); ?>" class="post-link">
+              <div class="featured-image">
+                  <?php the_post_thumbnail('large'); ?>
+              </div>
+              <h3 class="post-title"><?php the_title(); ?></h3>
+          </a>
+          <div class="metabox metabox--with-home-link">
+              <div>
+                  <?php echo get_avatar(get_the_author_meta('ID'), 96, '', '', array('class' => 'metabox__author-image')); ?>
+              </div>
+              <p>
+                  <span><?php the_author_posts_link(); ?><br><?php the_time('M j, Y'); ?>
+                  <?php
+                  $reading_time = get_estimated_reading_time(get_the_content());
+                  echo '• ' . $reading_time . ' min read</span>';
+                  ?>
+              </p>
+          </div>
+          <div class="post-excerpt"><?php the_excerpt(); ?></div>
+      </div>
+      <?php
+  }
+  wp_reset_postdata();
+  wp_die();
+}
+
+?>

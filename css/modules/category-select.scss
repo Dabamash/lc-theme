@@ -1,0 +1,23 @@
+.category-filter-form {
+
+    .category-filter-checkbox {
+        display: none;
+    }
+
+    .category-filter-label {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #f4f4f4;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .category-filter-checkbox:checked + .category-filter-label {
+        background-color: $mainOrange;
+        border-color: $mainOrange;
+        color: #fff;
+    }
+}

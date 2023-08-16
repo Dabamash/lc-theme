@@ -10,16 +10,35 @@ get_header();
     <div class="full-width-container__inner">
       <h1 class="headline headline--medium">All Guides</h1>
       <p>If you're going it alone, or you're just starting off, here's a bunch of helpful resources to point you in the right direction.<br>Don't worry, I've got your back 👍</p>
+      <h3>Choose categories</h3>
+      <!-- Category Filter Form -->
+      <form method="get" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" class="category-filter-form">
+          <?php
+          $categories = get_categories();
+          foreach ($categories as $category) {
+            echo '<input type="checkbox" id="cat-' . $category->term_id . '" name="categoryfilter[]" value="' . $category->term_id . '" class="category-filter-checkbox"><label for="cat-' . $category->term_id . '" class="category-filter-label">' . $category->name . '</label>';
+          }
+          ?>
+      </form>
+
       <div class="recent-posts-container">
         <?php
         $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-        $recent_posts = new WP_Query(array(
-          'post_type' => 'post',
-          'posts_per_page' => 12, // Display 12 posts per page
-          'orderby' => 'date',
-          'order' => 'DESC',
-          'paged' => $paged // Use pagination with the current page number
-        ));
+        $category_filter = isset($_GET['categoryfilter']) ? $_GET['categoryfilter'] : '';
+
+        $recent_posts_args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 12,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'paged' => $paged
+        );
+
+        if (!empty($category_filter)) {
+            $recent_posts_args['category__in'] = $category_filter;
+        }
+
+        $recent_posts = new WP_Query($recent_posts_args);
 
         while ($recent_posts->have_posts()) {
           $recent_posts->the_post();
