@@ -10,7 +10,7 @@
   background-color: rgba(0,0,0, 0.9);
   visibility: hidden;
   opacity: 0;
-  transform: scale(1.09);
+  transform: perspective(10px);
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
   box-sizing: border-box;
 
