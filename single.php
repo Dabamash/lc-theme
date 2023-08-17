@@ -40,7 +40,7 @@ while (have_posts()) {
     <div class="full-width-container__inner t-center">
       <div class="cta-banner--post">
         <h1 class="headline headline--medium">Become a <span>better marketer</span>, one email at a time.</h1>
-        <h2 class="headline headline--smaller">Empowering new & solo marketers with straight-talking, practical (and sometimes funny 🤷) advice. <br><br> Get the Clarity newsletter for free each week.</h2>
+        <h2 class="headline headline--smaller">Empowering new & solo marketers with straight-talking, practical (and sometimes funny 🤷) advice. <br><br> Get the Clarity newsletter for free twice a month.</h2>
         <script async data-uid="1d348d83d0" src="https://latent-clarity.ck.page/1d348d83d0/index.js"></script>
       </div>
     </div>

@@ -10,7 +10,7 @@
           <h3 class="headline headline--small">Explore</h3>
           <nav class="nav-list">
             <ul>
-              <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 16) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
+              <li <?php if (is_page('about') or wp_get_post_parent_id(0) == 16) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about') ?>">Start Here</a></li>
               <li <?php if (get_post_type() == 'post') echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/guides'); ?>">Guides</a></li>
               <li <?php if (is_page('tools') or wp_get_post_parent_id(0) == 16) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/tools') ?>">Tools</a></li>
               <li><a href="https://mentorcruise.com/mentor/davnash/" target="_blank">⧉ Mentorship</a></li>

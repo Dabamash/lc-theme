@@ -7,15 +7,15 @@
 <div class="full-width-split group">
   <div class="full-width-split__one">
     <div class="full-width-split__inner">
-      <img class="hero-image-mobile" src="/wp-content/uploads/2023/08/hero-image-mobile.webp" alt="Image Description" height="500" width="500">
+      <img class="hero-image-mobile" src="/wp-content/uploads/2023/08/hero-image-mobile.webp" alt="Image Description" height="320" width="320">
       <h1 class="headline headline--medium">Become a <span>Better Marketer</span> without the jargon.</h1><br>
-      <h2 class="headline headline--smaller">Empowering new & solo marketers with straight-talking, practical (and sometimes funny 🤷) advice. <br><br> Get the <strong>Clarity newsletter</strong> for free each week.</h2>
+      <h2 class="headline headline--smaller">Empowering new & solo marketers with straight-talking, practical (and sometimes funny 🤷) advice. <br><br> Get the <strong>Clarity newsletter</strong> for free twice a month.</h2>
       <script async data-uid="e66a897c18" src="https://latent-clarity.ck.page/e66a897c18/index.js"></script>
     </div>
   </div>
   <div class="full-width-split__two">
     <div class="full-width-split__inner">
-      <img class="hero-image" src="/wp-content/uploads/2023/08/hero-image-large.webp" alt="Image Description" height="320" width="320">
+      <img class="hero-image" src="/wp-content/uploads/2023/08/hero-image-lossless.webp" alt="Image Description" height="500" width="500">
     </div>
   </div>
 </div>
@@ -109,7 +109,7 @@
     <div class="full-width-container__inner t-center">
       <div class="cta-banner">
         <h1 class="headline headline--medium">Become a <strong>better marketer</strong>, one email at a time.</h1>
-        <h2 class="headline headline--smaller" style="padding-top:20px;color:#fff !important">Empowering new & solo marketers with straight-talking, practical (and sometimes funny 🤷‍♀️) advice. <br><br> Get the Clarity newsletter for free each week.</h2>
+        <h2 class="headline headline--smaller" style="padding-top:20px;color:#fff !important">Empowering new & solo marketers with straight-talking, practical (and sometimes funny 🤷‍♀️) advice. <br><br> Get the Clarity newsletter for free twice a month.</h2>
         <button class="btn" data-formkit-toggle="5cfc01ee28">Get Clarity | Subscribe</button>
       </div>
     </div>
