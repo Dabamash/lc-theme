@@ -12,9 +12,9 @@
       <a href="<?php echo site_url() ?>" class="float-left">
         <img src="<?php echo get_template_directory_uri() ?>/images/lc-orange.webp" alt="Latent Clarity Logo" width="200" height="31">
       </a>
-      <a href="<?php echo esc_url(site_url('/search')); ?>" class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></a>
+      <a href="<?php echo esc_url(site_url('/search')); ?>" class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-label="Search the site"></i></a>
       <div class="site-header__menu-trigger">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="fa fa-bars" aria-label="Open mobile menu"></i>
       </div>
       <div class="site-header__menu group">
         <nav class="main-navigation">
