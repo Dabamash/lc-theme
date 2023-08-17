@@ -58,7 +58,7 @@
     <div class="full-width-container__inner">
       <div class="heading-with-link">
         <h1 class="headline headline--medium">Most Recent Guides</h1>
-        <a href="http://latentclarity.abc/guides" class="view-more-link">View More →</a>
+        <a href="/guides" class="view-more-link">View More →</a>
       </div>
       <div class="recent-posts-container">
         <?php

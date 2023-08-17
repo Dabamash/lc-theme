@@ -37,7 +37,6 @@ class CategoryFilter {
         })
         .then(response => response.text())
         .then(data => {
-            // Assuming you have a container with the class "recent-posts-box" to display the posts
             document.querySelector('.recent-posts-container').innerHTML = data;
         })
         .catch(error => {
