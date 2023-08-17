@@ -75,6 +75,13 @@
   opacity: 0.65;
 }
 
+.search-trigger-404 {
+  color: $mainOrange;
+  top: 0;
+  margin-left: 10px;
+  display: inline-block;
+}
+
 .nav-list ul {
   padding: 0;
   margin: 0;
@@ -149,9 +156,9 @@
 
 /* Seach Form */
 .search-form {
-  background-color: #dedede;
   padding: 20px;
   text-align: center;
+  border: 2px solid #ddd;
 }
 
 .search-form label {
@@ -166,7 +173,7 @@
   min-width: 20px;
   flex-basis: auto;
   flex-grow: 1;
-  border: none;
+  border: 1px solid $mainOrange;
   font-family: "Roboto", sans-serif;
   padding: 10px;
   @include atSmall {
@@ -174,7 +181,12 @@
   }
 }
 
+.search-form .s::placeholder {
+  color: #ddd;
+}
+
 .search-submit {
+  cursor: pointer;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -183,4 +195,8 @@
   font-family: "Roboto", sans-serif;
   padding: 0 20px;
   margin-left: 10px;
+
+  &:hover {
+    background-color: darken($mainOrange, 10%);
+  }
 }

@@ -1,59 +1,28 @@
 <?php
-
+header("HTTP/1.1 404 Not Found");
 get_header(); ?>
 
 <div class="page-banner">
 </div>
 
-<?php
-while (have_posts()) {
-  the_post();
-?>
-
 <div class="container container--narrow page-section">
-  <h1 class="headline--medium t-center"><?php the_title(); ?></h1><br>
-  <?php
-  $theParent = wp_get_post_parent_id(get_the_ID());
-  if ($theParent) { ?>
-    <div class="metabox metabox--position-up metabox--with-home-link">
-      <p><a class="metabox__blog-home-link" href="<?php echo get_permalink($theParent); ?>"><i class="fa fa-home" aria-hidden="true"></i> Back to <?php echo get_the_title($theParent); ?></a> <span class="metabox__main"><?php the_title(); ?></span></p>
-    </div>
-  <?php } ?>
-
-  <?php
-  $testArray = get_pages(array(
-    'child_of' => get_the_ID()
-  ));
-
-  if ($theParent or $testArray) { ?>
-    <div class="page-links">
-      <h2 class="page-links__title"><a href="<?php echo get_permalink($theParent); ?>"><?php echo get_the_title($theParent); ?></a></h2>
-      <ul class="min-list">
-        <?php
-        if ($theParent) {
-          $findChildrenOf = $theParent;
-        } else {
-          $findChildrenOf = get_the_ID();
-        }
-
-        wp_list_pages(array(
-          'title_li' => NULL,
-          'child_of' => $findChildrenOf,
-          'sort_column' => 'menu_order'
-        ));
-        ?>
-      </ul>
-    </div>
-  <?php } ?>
-
+  <h1 class="headline--medium t-center">404 - Page Not Found 😭</h1><br>
   <div class="generic-content">
-    <?php the_content(); ?>
+    <p class="t-center">Uh oh! This page doesn't exist.</p>
+    <p class="t-center">It wishes it did and it's sorry it's disappointed you.</p> 
+    <p class="t-center">Check your URL or head back to the <a href="<?php echo site_url(); ?>">homepage</a>. Alternatively, you can search for what you're looking for by clicking this icon.     <a href="http://latent-clarity-backup.local/search" class="search-trigger search-trigger-404 js-search-trigger"><i class="fa fa-search" aria-hidden="true"></i></a>
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 
 </div>
 
-<?php }
-
+<?php 
 get_footer();
 
 ?>

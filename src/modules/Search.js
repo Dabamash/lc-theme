@@ -52,23 +52,38 @@ class Search {
 
   async getResults() {
     try {
-      const response = await axios.get(lcData.root_url + "/wp-json/lc/v1/search?term=" + this.searchField.value)
-      const results = response.data
+      const response = await axios.get(lcData.root_url + "/wp-json/lc/v1/search?term=" + this.searchField.value);
+      const results = response.data;
+  
+      const pageResults = results.generalInfo.filter(item => item.postType === "page");
+      const guideResults = results.generalInfo.filter(item => item.postType === "post");
+  
       this.resultsDiv.innerHTML = `
-        <div class="row">
-
-            <h2 class="search-overlay__section-title">Results...</h2>
-            ${results.generalInfo.length ? '<ul class="link-list min-list">' : "<p>No general information matches that search.</p>"}
-              ${results.generalInfo.map(item => `<li><a href="${item.permalink}">${item.title}</a> ${item.postType == "post" ? `by ${item.authorName}` : ""}</li>`).join("")}
-            ${results.generalInfo.length ? "</ul>" : ""}
-        
+      <div class="full-width-split group">
+        <div class="full-width-split__one">
+          <div class="full-width-split__inner">
+            <h2 class="search-overlay__section-title">Pages</h2>
+            ${pageResults.length ? '<ul class="link-list min-list">' : "<p>No pages match that search.</p>"}
+            ${pageResults.map(item => `<li><a href="${item.permalink}">${item.title}</a>`).join("")}
+            ${pageResults.length ? "</ul>" : ""}
+          </div>
         </div>
-      `
-      this.isSpinnerVisible = false
+        <div class="full-width-split__two">
+          <div class="full-width-split__inner">
+            <h2 class="search-overlay__section-title">Guides</h2>
+            ${guideResults.length ? '<ul class="link-list min-list">' : "<p>No guides match that search.</p>"}
+            ${guideResults.map(item => `<li><a href="${item.permalink}">${item.title}</a>`).join("")}
+            ${guideResults.length ? "</ul>" : ""}
+          </div>
+        </div>
+      </div>`;
+      
+      this.isSpinnerVisible = false;
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   }
+  
 
   keyPressDispatcher(e) {
     if (e.keyCode == 83 && !this.isOverlayOpen && document.activeElement.tagName != "INPUT" && document.activeElement.tagName != "TEXTAREA") {
