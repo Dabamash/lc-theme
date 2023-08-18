@@ -1,5 +1,4 @@
 .recent-posts-container {
-    display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -7,6 +6,7 @@
 
     
     @include atSmall {
+      display: flex;
       flex-direction: row;
       align-items: stretch;
 
