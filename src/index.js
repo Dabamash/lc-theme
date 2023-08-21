@@ -10,3 +10,4 @@ import CategoryFilter from "./modules/CategoryFilter.js"
 const mobileMenu = new MobileMenu()
 const search = new Search()
 const categoryfilter = new CategoryFilter();
+const backToTopButton = new BackToTopButton();
