@@ -24,4 +24,8 @@
     text-decoration: none;
     color: $mainOrange;
   }
+
+  @include atSmall {
+    display: block;
+  }
 }

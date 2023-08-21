@@ -3,17 +3,19 @@ import axios from "axios"
 class Search {
   // 1. describe and create/initiate our object
   constructor() {
-    this.addSearchHTML()
-    this.resultsDiv = document.querySelector("#search-overlay__results")
-    this.openButton = document.querySelectorAll(".js-search-trigger")
-    this.closeButton = document.querySelector(".search-overlay__close")
-    this.searchOverlay = document.querySelector(".search-overlay")
-    this.searchField = document.querySelector("#search-term")
-    this.isOverlayOpen = false
-    this.isSpinnerVisible = false
-    this.previousValue
-    this.typingTimer
-    this.events()
+    document.addEventListener("DOMContentLoaded", () => {
+      this.addSearchHTML()
+      this.resultsDiv = document.querySelector("#search-overlay__results")
+      this.openButton = document.querySelectorAll(".js-search-trigger")
+      this.closeButton = document.querySelector(".search-overlay__close")
+      this.searchOverlay = document.querySelector(".search-overlay")
+      this.searchField = document.querySelector("#search-term")
+      this.isOverlayOpen = false
+      this.isSpinnerVisible = false
+      this.previousValue
+      this.typingTimer
+      this.events()
+    });
   }
 
   // 2. events

@@ -13,7 +13,7 @@ add_action('rest_api_init', 'lc_custom_rest');
 function lc_files() {
   wp_enqueue_script('main-lc-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
-  wp_enqueue_script('font-awesome-kit', 'https://kit.fontawesome.com/5ff7de27f2.js', array(), null, true);
+  wp_enqueue_script('font-awesome-kit', '//kit.fontawesome.com/5ff7de27f2.js', array(), null, true);
   wp_enqueue_style('lc_main_styles', get_theme_file_uri('/build/style-index.css'));
   wp_enqueue_style('lc_extra_styles', get_theme_file_uri('/build/index.css'));
 
