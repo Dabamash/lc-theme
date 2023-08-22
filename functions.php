@@ -194,4 +194,7 @@ function my_filter_function() {
   wp_die();
 }
 
+// ACF Display Custom Fields
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
 ?>
