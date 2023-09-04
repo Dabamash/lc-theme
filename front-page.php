@@ -74,7 +74,9 @@
         ?>
           <div class="recent-post-box">
             <div class="featured-image">
-              <?php the_post_thumbnail('large'); ?>
+              <a href="<?php the_permalink(); ?>" class="post-link">
+                <?php the_post_thumbnail('large'); ?>
+              </a>
             </div>
             <a href="<?php the_permalink(); ?>" class="post-link">
               <h3 class="post-title"><?php the_title(); ?></h3>
