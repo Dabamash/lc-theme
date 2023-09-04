@@ -49,7 +49,7 @@ while (have_posts()) {
 
 <div class="container container--narrow page-section">
   <!-- a section which displays information about the author of the post -->
-  <h1 class="headline--small">Written By</h1>
+  <h3 class="headline--small">Written By</h3>
   <div class="metabox metabox--with-home-link">
     <div>
       <?php echo get_avatar(get_the_author_meta('ID'), 96, '', '', array('class' => 'metabox__author-image')); ?>
@@ -62,6 +62,7 @@ while (have_posts()) {
   <a style="text-decoration:none;" href="http://latentclarity.abc/author/dav/">See my other posts</a>
   <hr>
   <div class="comments-section">
+  <h3 class="headline--small">Join the discussion</h3>
     <?php comments_template(); ?>
   </div>
 </div>
