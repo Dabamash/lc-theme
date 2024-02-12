@@ -44,7 +44,7 @@
           <p class="testimonial-content">I've worked with Dav for a number of years and consider him to be one of the best digital strategists I have encountered. 
           Not only does he really know his stuff but he also cares passionately about getting the best results for clients.</p>
           <div class="testimonial-author">Steve Hall</div>
-          <div class="testimonial-company">Comms Director | <strong>Purpose Media</strong></div>
+          <div class="testimonial-company">Former Editor in Chief | <strong>Reach PLC</strong></div>
         </div>
       </div>
     </div>
