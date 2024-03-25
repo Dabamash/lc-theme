@@ -24,7 +24,7 @@ while (have_posts()) {
       <?php echo get_avatar(get_the_author_meta('ID'), 96, '', '', array('class' => 'metabox__author-image')); ?>
     </div>
     <p>
-      <span><?php the_author_posts_link(); ?><br><?php the_time('M j, Y'); ?>
+      <span><?php the_author_posts_link(); ?><br>
         <?php
           $reading_time = get_estimated_reading_time(get_the_content());
           echo '• ' . $reading_time . ' min read</span>';

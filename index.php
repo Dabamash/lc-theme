@@ -58,7 +58,7 @@ get_header();
                 <span><?php the_author_posts_link(); ?><br>
                   <?php
                   $reading_time = get_estimated_reading_time(get_the_content());
-                  echo '• ' . $reading_time . ' min read</span>';
+                  echo $reading_time . ' min read</span>';
                   ?>
               </p>
             </div>
