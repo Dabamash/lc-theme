@@ -80,7 +80,7 @@ function ourLoginTitle() {
 
 // Custom function to calculate estimated reading time
 function get_estimated_reading_time($content) {
-  $words_per_minute = 200;
+  $words_per_minute = 238;
   $word_count = str_word_count(strip_tags($content));
   $reading_time = ceil($word_count / $words_per_minute);
 
