@@ -32,6 +32,9 @@
         <nav class="nav-list">
           <ul>
             <li><a href="https://www.linkedin.com/in/davnash/">LinkedIn</a></li>
+            <a href="https://mentorcruise.com/mentor/davnash/">
+              <img src="https://mentorcruise.com/mentor/davnash/widget/" loading="lazy" class="md:h-28" style="max-height: 140px" alt="">
+            </a>
           </ul>
         </nav>
       </div>
