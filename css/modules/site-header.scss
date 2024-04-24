@@ -86,10 +86,6 @@
       font-size: 1.4rem;
       display: none;
     }
-
-    @include atMedium {
-      display: none;
-    }
   }
 
   &__util {
