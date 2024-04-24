@@ -14,8 +14,14 @@ function lc_files() {
   wp_enqueue_script('main-lc-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
   wp_enqueue_script('font-awesome-kit', '//kit.fontawesome.com/5ff7de27f2.js', array(), null, true);
-  wp_enqueue_style('lc_main_styles', get_theme_file_uri('/build/style-index.css'));
-  wp_enqueue_style('lc_extra_styles', get_theme_file_uri('/build/index.css'));
+
+  // Get the file modification time as version number for style-index.css
+  $style_index_version = filemtime(get_theme_file_path('/build/style-index.css'));
+  wp_enqueue_style('lc_main_styles', get_theme_file_uri('/build/style-index.css'), array(), $style_index_version);
+
+  // Get the file modification time as version number for index.css
+  $index_version = filemtime(get_theme_file_path('/build/index.css'));
+  wp_enqueue_style('lc_extra_styles', get_theme_file_uri('/build/index.css'), array(), $index_version);
 
   wp_localize_script('main-lc-js', 'lcData', array(
     'root_url' => get_site_url(),
@@ -23,7 +29,6 @@ function lc_files() {
     'nonce' => wp_create_nonce('wp_rest')
   ));
 }
-
 add_action('wp_enqueue_scripts', 'lc_files');
 
 function lc_features() {
