@@ -197,19 +197,6 @@ function my_filter_function() {
 // ACF Display Custom Fields
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
-function my_theme_styles() {
-  // Get the absolute path to the stylesheet.
-  $stylesheet_path = get_template_directory() . '/build/style-index.css'; 
-  
-  // Use filemtime to get the file modification time.
-  $version = filemtime($stylesheet_path);
-
-  // Properly enqueue the stylesheet with versioning.
-  wp_enqueue_style('my-theme-style', get_template_directory_uri() . '/build/style-index.css', array(), $version);
-}
-add_action('wp_enqueue_scripts', 'my_theme_styles');
-
-
 ?>
 
 
