@@ -81,7 +81,7 @@
     top: 3px;
     right: 46px;
 
-    @include atSmall {
+    @include atMedium {
       top: 5px;
       font-size: 1.4rem;
       display: none;
