@@ -20,8 +20,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <header class="site-header">
     <div class="container">
-      <a href="<?php echo site_url() ?>" class="float-left">
         <img src="<?php echo get_template_directory_uri() ?>/images/lc-orange.webp" alt="Latent Clarity Logo" width="200" height="31">
-      </a>
     </div>
   </header>
