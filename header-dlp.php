@@ -18,8 +18,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3VPFKNF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <header class="site-header">
+  <header class="site-header site-header--dlp">
     <div class="container">
-        <img src="<?php echo get_template_directory_uri() ?>/images/lc-orange.webp" alt="Latent Clarity Logo" width="200" height="31">
+        <img src="<?php echo get_template_directory_uri() ?>/images/lc-orange-black.webp" alt="Latent Clarity Logo" width="200" height="31">
     </div>
   </header>

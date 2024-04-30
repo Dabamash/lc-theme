@@ -5,9 +5,6 @@ Template Name: Landing Page
 
 include('header-dlp.php'); ?>
 
-<div class="page-banner">
-</div>
-
 <?php
 while (have_posts()) {
   the_post();
