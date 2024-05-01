@@ -27,5 +27,5 @@ while (have_posts()) {
 </div>
 
 <?php }
-
+include('footer-dlp.php');
 ?>
