@@ -69,13 +69,14 @@ get_header();
         wp_reset_postdata();
         ?>
       </div>
-      <?php
-// Display pagination links
-echo paginate_links(array(
-  'total'        => $recent_posts->max_num_pages,
-  'link_classes' => 'btn btn--small-page-number page-numbers' // Add your custom classes here
-));
-?>
+  <div class="pagination-container">
+    <?php
+      echo paginate_links(array(
+        'total'        => $recent_posts->max_num_pages,
+      ));
+    ?>
+  </div>
+
 
     </div>
   </div>

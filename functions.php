@@ -202,6 +202,18 @@ function my_filter_function() {
 // ACF Display Custom Fields
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
+function add_custom_pagination_class($link) {
+  // Check if it's the current page span and add the classes
+  if(strpos($link, 'aria-current') !== false) {
+      $link = str_replace('<span class="', '<span class="btn btn--small-page-number-current ', $link);
+  } else {
+      // Otherwise, it's a regular link, so add classes as before
+      $link = str_replace('<a class="', '<a class="btn btn--small-page-number ', $link);
+  }
+  return $link;
+}
+add_filter('paginate_links_output', 'add_custom_pagination_class');
+
 ?>
 
 
