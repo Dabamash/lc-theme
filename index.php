@@ -70,11 +70,13 @@ get_header();
         ?>
       </div>
       <?php
-      // Display pagination links
-      echo paginate_links(array(
-        'total' => $recent_posts->max_num_pages
-      ));
-      ?>
+// Display pagination links
+echo paginate_links(array(
+  'total'        => $recent_posts->max_num_pages,
+  'link_classes' => 'btn btn--small-page-number page-numbers' // Add your custom classes here
+));
+?>
+
     </div>
   </div>
 </div>

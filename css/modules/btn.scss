@@ -19,6 +19,15 @@
     box-shadow: 0 0px 10px rgba(237, 109, 70, 0.6);
   }
 
+  &--small-page-number {
+    font-size: 1rem;
+    padding: 7px 13px;
+    font-weight: 400;
+    border: 1px solid $mainOrange;
+    box-shadow: 0 0px 10px rgba(237, 109, 70, 0.6);
+    color: $mainOrange;
+  }
+
   &--with-photo {
     padding-left: 40px;
     position: relative;
