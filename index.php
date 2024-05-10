@@ -69,15 +69,19 @@ get_header();
         wp_reset_postdata();
         ?>
       </div>
-  <div class="pagination-container">
-    <?php
-      echo paginate_links(array(
-        'total'        => $recent_posts->max_num_pages,
-      ));
-    ?>
-  </div>
 
-
+      <div class="pagination-container">
+        <?php
+        echo paginate_links(array(
+          'total'        => $recent_posts->max_num_pages,
+          'prev_text'    => __('Previous'),
+          'next_text'    => __('Next'),
+          'type'         => 'plain',
+          'end_size'     => 1,
+          'mid_size'     => 1,
+        ));
+        ?>
+      </div>
     </div>
   </div>
 </div>

@@ -1,3 +1,29 @@
 .pagination-container {
   text-align: center; 
 }
+
+.page-number {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: $mainOrange;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 7px 13px;
+  border: 1px solid $mainOrange;
+  box-shadow: 0 0px 10px rgba(237, 109, 70, 0.6);
+  outline: none;
+  transition: background-color 0.3s ease;
+
+  &--current {
+    font-size: 1rem;
+    padding: 7px 13px;
+    font-weight: 400;
+    border: 1px solid $mainOrange;
+    box-shadow: 0 0px 10px rgba(237, 109, 70, 0.6);
+    color: #fff;
+    background-color: $mainOrange;
+  }
+}
