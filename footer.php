@@ -38,8 +38,8 @@
           </ul>
         </nav>
       </div>
-      <p>Copyright &copy; <?php echo date('Y'); ?> Latent Clarity</p>
     </div>
+    <p class="cr">Copyright &copy; <?php echo date('Y'); ?> Latent Clarity</p>
   </div>
 </footer>
 
