@@ -1,63 +1,68 @@
 .recent-posts-container {
-    flex-flow: row wrap;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
 
-    
-    @include atSmall {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
+  @include atSmall {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 
-      .recent-post-box {
-        flex-basis: calc(50% - 20px);
-        margin-bottom: 20px;
-        margin-right: 20px;
-      }
-    }
-
-    @include atMedium {
-      .recent-post-box {
-        flex-basis: calc(33.33% - 40px);
-        margin-bottom: 20px;
-        margin-right: 20px;
-      }
-
-      &::after {
-        content: "";
-        flex: 0 0 32%;
-        max-width: 100%;
-      }
+    .recent-post-box {
+      flex-basis: calc(50% - 20px);
+      margin-bottom: 20px;
+      margin-right: 20px;
     }
   }
-  
-  .recent-post-box {
-    flex-basis: calc(33.33% - 40px);
-    margin-bottom: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
 
-    a {
-      color: #000;
+  @include atMedium {
+    .recent-post-box {
+      flex-basis: calc(33.33% - 40px);
+      margin-bottom: 20px;
+      margin-right: 20px;
     }
 
+    &::after {
+      content: "";
+      flex: 0 0 32%;
+      max-width: 100%;
+    }
   }
-  
+}
+
+.recent-post-box {
+  flex-basis: calc(33.33% - 40px);
+  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+
+  &:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .2); 
+  }
+
+  a {
+    color: #000;
+    text-decoration: none; 
+  }
+
   .featured-image img {
     max-width: 100%;
     height: auto;
   }
-  
+
   .post-title {
     font-size: 18px;
     margin-top: 10px;
   }
-  
+
   .post-excerpt {
     margin-top: 10px;
   }
+}
