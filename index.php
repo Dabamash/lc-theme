@@ -71,17 +71,29 @@ get_header();
       </div>
 
       <div class="pagination-container">
-        <?php
-        echo paginate_links(array(
-          'total'        => $recent_posts->max_num_pages,
-          'prev_text'    => __('Previous'),
-          'next_text'    => __('Next'),
-          'type'         => 'plain',
-          'end_size'     => 1,
-          'mid_size'     => 1,
-        ));
-        ?>
-      </div>
+  <?php
+  $pagination_links = paginate_links(array(
+    'total'        => $recent_posts->max_num_pages,
+    'prev_text'    => __('Previous'),
+    'next_text'    => __('Next'),
+    'type'         => 'array', // Change to 'array' to customize each link
+    'end_size'     => 1,
+    'mid_size'     => 1,
+  ));
+
+  if ($pagination_links) {
+    foreach ($pagination_links as $link) {
+      if (strpos($link, 'current') !== false) {
+        // Add the class for the current page link
+        echo str_replace('page-numbers', 'page-number page-number--current', $link);
+      } else {
+        echo str_replace('page-numbers', 'page-number', $link);
+      }
+    }
+  }
+  ?>
+</div>
+
     </div>
   </div>
 </div>

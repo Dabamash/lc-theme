@@ -200,12 +200,12 @@ function my_filter_function() {
 }
 
 // ACF Display Custom Fields
-add_filter('acf/settings/remove_wp_meta_box', '__return_false');
-
 function add_custom_pagination_class($link) {
-  // Adding 'page-number' class to all links
-  $link = str_replace('<a ', '<a class="page-number" ', $link);
+  // Target the current page span and replace classes
   $link = str_replace("<span class='page-numbers current'", "<span class='page-number page-number--current'", $link);
+
+  // Target all other links and add the page-number class
+  $link = preg_replace('/<a /', '<a class="page-number" ', $link);
 
   return $link;
 }

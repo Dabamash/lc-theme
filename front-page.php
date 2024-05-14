@@ -8,7 +8,7 @@
   <div class="full-width-split__one">
     <div class="full-width-split__inner">
       <img class="hero-image-mobile" src="/wp-content/uploads/2023/08/hero-image-mobile.webp" alt="Image Description" height="320" width="320">
-      <h1 class="headline headline--medium">Become a <span>Better Marketer</span> without the jargon.</h1><br>
+      <h1 class="headline headline--medium">The easiest way to <span>become a Better Marketer</span></h1><br>
       <h2 class="headline headline--smaller">Empowering new & solo marketers with straight-talking, practical (and sometimes funny 🤷) advice. <br><br> Get the <strong>Clarity newsletter</strong> for free twice a month.</h2>
       <script async data-uid="e66a897c18" src="https://latent-clarity.ck.page/e66a897c18/index.js"></script>
     </div>
