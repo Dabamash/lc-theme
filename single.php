@@ -60,11 +60,6 @@ while (have_posts()) {
   </div>
   <p><?php echo nl2br(get_the_author_meta('description')); ?></p><br>
   <a style="text-decoration:none;" href="https://latentclarity.com/guides/author/dav/">See my other posts</a>
-  <hr>
-  <div class="comments-section">
-  <h3 class="headline--small">Join the discussion</h3>
-    <?php comments_template(); ?>
-  </div>
 </div>
 
 <div class="back-to-top">
